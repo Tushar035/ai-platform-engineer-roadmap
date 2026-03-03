@@ -6,6 +6,9 @@ Python is:
   Dynamically Typed → You don’t declare types explicitly
   Strongly Typed → You cannot mix incompatible types without conversion
   Object-Oriented → Everything in Python is an object
+  case Sensitive 
+  Indentation matters in python as we don't write curly braces in python
+  no need to add semicolon at end of each line
 
 Example:
 python
