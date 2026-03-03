@@ -1,0 +1,251 @@
+
+ 🧠 What is Control Flow?
+Control Flow determines the order in which statements are executed in a program.
+By default, Python executes code top to bottom.
+
+python
+print("Step 1")
+print("Step 2")
+print("Step 3")
+
+But in real programs, we need:
+ Decision making
+ Repeating tasks
+ Skipping steps
+ Stopping execution
+
+That’s where control flow comes in.
+ 📌 Types of Control Flow in Python
+1️⃣ Conditional Statements
+2️⃣ Loops
+3️⃣ Loop Control Statements
+4️⃣ Exception Handling
+5️⃣ MatchCase (Python 3.10+)
+
+1️⃣ Conditional Statements (Decision Making)
+-------------------------------------------
+Used when you want to execute code based on a condition.
+🔹 if Statement
+---------------
+python
+age = 20
+
+if age >= 18:
+    print("You are an adult")
+
+ Condition must return True or False
+ Indentation is mandatory in Python
+
+🔹 ifelse
+----------
+python
+age = 16
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+
+🔹 ifelifelse
+-------------
+python
+marks = 75
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 70:
+    print("Grade B")
+elif marks >= 50:
+    print("Grade C")
+else:
+    print("Fail")
+
+🔹 Nested if
+--------------
+python
+age = 25
+citizen = True
+
+if age >= 18:
+    if citizen:
+        print("Eligible to vote")
+
+2️⃣ Loops (Repetition)
+----------------------
+Used to execute code multiple times.
+
+🔄 for Loop
+--------------
+Used when you know how many times to repeat.
+
+python
+for i in range(5):
+    print(i)
+
+ Output:
+0
+1
+2
+3
+4
+
+🔹 Loop Through List
+--------------------
+python
+names = ["A", "B", "C"]
+
+for name in names:
+    print(name)
+
+🔁 while Loop
+----------------
+Used when repetition depends on a condition.
+
+python
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1
+
+⚠ Important: Always modify condition variable inside while loop to avoid infinite loop.
+
+3️⃣ Loop Control Statements
+---------------------------
+Used to control loop execution.
+
+🔹 break (Stops loop completely)
+--------------------------------
+python
+for i in range(10):
+    if i == 5:
+        break
+    print(i)
+
+🔹 continue (Skips current iteration)
+------------------------------------
+python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+
+ 🔹 pass (Does nothing)
+
+python
+for i in range(5):
+    pass
+
+Used as placeholder.
+
+4️⃣ Exception Handling (Error Control Flow)
+----------------------------------------
+Prevents program crash.
+
+python
+try:
+    x = int(input("Enter number: "))
+    print(10 / x)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except ValueError:
+    print("Invalid input")
+else:
+    print("No errors")
+finally:
+    print("Done")
+
+ Theory:
+
+ try → risky code
+ except → handle error
+ else → runs if no error
+ finally → always runs
+
+5️⃣ matchcase (Python 3.10+)
+-----------------------------
+Modern switchcase alternative.
+
+python
+day = 2
+
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case _:
+        print("Invalid")
+
+🔥 Advanced Concepts
+---------------------
+🔹 Ternary Operator
+--------------------
+Short form of ifelse
+
+python
+age = 20
+result = "Adult" if age >= 18 else "Minor"
+print(result)
+
+🔹 forelse
+-------------
+python
+for i in range(3):
+    print(i)
+else:
+    print("Loop completed")
+
+else runs if loop does NOT break.
+
+🔹 whileelse
+-------------
+python
+count = 0
+
+while count < 3:
+    print(count)
+    count += 1
+else:
+    print("Done")
+
+
+🎯 RealWorld Example (Backend Thinking)
+----------------------------------------
+Example: Validate login attempts
+
+python
+attempts = 0
+
+while attempts < 3:
+    password = input("Enter password: ")
+
+    if password == "admin123":
+        print("Login successful")
+        break
+    else:
+        print("Wrong password")
+        attempts += 1
+else:
+    print("Account locked")
+
+
+📊 Summary Table
+-------------------
+| Type          | Keywords              |
+| --------------|---------------------  |
+| Conditional   | if, elif, else        |
+| Loop          | for, while            |
+| Loop Control  | break, continue, pass |
+| Exception     | try, except, finally  |
+| Pattern Match | matchcase             |
+
+ 💼 Important Points
+
+1. Python uses indentation, not braces
+2. Boolean expressions return True/False
+3. for loop works on iterable
+4. break stops loop fully
+5. continue skips iteration
+6. while can cause infinite loop
+7. matchcase available from Python 3.10
