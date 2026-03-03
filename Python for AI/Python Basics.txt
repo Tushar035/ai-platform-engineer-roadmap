@@ -1,0 +1,287 @@
+Python Basics                            
+---------------
+
+Python DataTypes
+-----------------
+Python is:
+  Dynamically Typed → You don’t declare types explicitly
+  Strongly Typed → You cannot mix incompatible types without conversion
+  Object-Oriented → Everything in Python is an object
+
+Example:
+
+python
+x = 10
+print(type(x))
+
+
+Output:
+<class 'int'>
+
+command
+python main.py
+
+1. Numeric Data Types
+-----------------------
+Python supports:
+ int → Whole numbers
+ float → Decimal numbers
+ complex → Complex numbers (real + imaginary) a+ib
+
+Examples
+Integer
+-------
+python
+age = 25
+print(age)
+print(type(age))
+
+Float
+------
+python
+price = 99.99
+print(price)
+print(type(price))
+
+Complex
+---------
+python
+number = 3 + 4j
+print(number)
+print(type(number))
+
+2. String (str)
+--------------
+ Ordered
+ Immutable
+ Supports indexing & slicing
+
+Strings can use:
+
+ Single quotes ' '
+ Double quotes " "
+ Triple quotes """ """
+
+Examples
+
+python
+name = "Tushar"
+print(name)
+print(type(name))
+
+String Operations
+-----------------
+python
+text = "Python"
+
+print(text.upper())      Convert to uppercase
+print(text.lower())      Convert to lowercase
+print(text[0])           Indexing - T
+print(text[0:3])         Slicing  - TUS
+print(len(text))         Length   - 6
+
+3. Boolean (bool)
+--------------------
+Examples
+
+is_logged_in = True
+print(is_logged_in)
+print(type(is_logged_in))
+
+Comparison Example
+
+print(10 > 5)      True
+print(5 == 3)      False
+
+4. Sequence Types 
+-----------------
+4.1 List - []
+--------
+ Ordered
+ Mutable (can change)
+ Allows duplicates
+ Uses square brackets [ ]
+
+Example
+python
+numbers = [1, 2, 3, 4]
+print(numbers)
+print(type(numbers))
+
+numbers.append(5)
+print(numbers)
+
+numbers[0] = 100
+print(numbers)
+
+4.2 Tuple - () 
+----------
+ Ordered
+ Immutable (cannot change)
+ Faster than list
+ Uses parentheses ( )
+
+Example
+python
+coordinates = (10, 20)
+print(coordinates)
+print(type(coordinates))
+
+Trying to modify:
+python
+ coordinates[0] = 50    Error
+ 
+ Tuple two built-in methods 
+ ---------------------------
+ count - print occurances of values if not present will get output as 0
+ index - give first index of value if not present will get error x is not a tuple
+
+4.3 Range - range(n)
+----------------------
+Generates a sequence of numbers.
+Commonly used in loops.
+
+Example
+python
+r = range(5)
+
+for i in r:
+    print(i)
+
+
+Output:
+0 1 2 3 4
+
+5. Set - {}
+--------
+ Unordered
+ No duplicates
+ Mutable
+ Uses { }
+
+Useful for removing duplicates.
+
+Example
+----------
+python
+nums = {1, 2, 3, 3, 4}
+print(nums)
+print(type(nums))
+
+nums.add(10)
+print(nums)
+
+6. Dictionary (dict) - {key:value}
+---------------------
+Stores data in key-value pairs.
+
+ Keys must be unique
+ Mutable
+ Uses { }
+ Very important in real-world applications
+
+Example
+-------
+python
+person = {
+    "name": "Tushar",
+    "age": 25,
+    "city": "Latur"
+}
+
+print(person)
+print(type(person))
+
+print(person["name"])
+
+person["age"] = 30
+print(person)
+
+
+7. None Type
+----------- 
+Represents absence of value.
+
+Often used:
+-----------
+ As default function return
+ To initialize variables
+
+Example
+
+python
+data = None
+print(data)
+print(type(data))
+
+Type Conversion (Type Casting)
+----------------------------------
+
+Sometimes you need to convert one type into another.
+
+Python provides built-in functions:
+
+ int()
+ float()
+ str()
+ list()
+ tuple()
+ set()
+
+Examples
+
+python
+x = "10"
+y = int(x)
+
+print(y)
+print(type(y))
+
+More conversions:
+----------------
+
+print(float(5)) - 5.0
+print(str(100)) - "100"
+print(list("abc")) - [a,b,c]
+print(tuple([1, 2, 3])) - (1,2,3)
+
+| Feature              | List               | Tuple            | Set          | Dictionary             |
+| -------------------- | ------------------ | ---------------- | ------------ | ---------------------- |
+| Syntax               | `[ ]`              | `( )`            | `{ }`        | `{key: value}`         |
+| Example              | `[1,2,3]`          | `(1,2,3)`        | `{1,2,3}`    | `{"a":1}`              |
+| Ordered              | ✅ Yes             | ✅ Yes           | ❌ No        | ✅ Yes (Py 3.7+)        |
+| Mutable              | ✅ Yes             | ❌ No            | ✅ Yes       | ✅ Yes                  |
+| Allows Duplicates    | ✅ Yes             | ✅ Yes           | ❌ No        | ❌ Keys No (Values Yes) |
+| Indexing             | ✅ Yes             | ✅ Yes           | ❌ No        | ❌ (Access via key)     |
+| Heterogeneous Data   | ✅ Yes             | ✅ Yes           | ✅ Yes       | ✅ Yes                  |
+| Performance (Search) | Slower             | Faster than list | Very Fast    | Very Fast              |
+| Use Case             | Ordered collection | Fixed data       | Unique items | Key-value mapping      |
+
+
+command : irequest
+Query : irequest
+
+
+controller 
+mediator
+automapper
+fluent validation
+ef core
+response<t>
+uniform exception
+logging - minimal log - exception 
+third api logging
+database 
+
+ a.create(model)
+ logger.loginfo()
+ 
+ logger()
+
+
+dockerfile - image - acr - aks
+
+from .netsdk - lite as base image
+import 
+
+serlog conncetion string
