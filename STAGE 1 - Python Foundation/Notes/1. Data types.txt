@@ -14,7 +14,8 @@ Example:
 python
 x = 10
 print(type(x))
-
+x,y =(2,5) # paranthesis is not mandatory but provides more readability 
+           # just number of values must be equal to number of variables or error
 Output:
 <class 'int'>
 
