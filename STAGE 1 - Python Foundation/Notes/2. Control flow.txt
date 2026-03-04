@@ -241,7 +241,7 @@ else:
 | Pattern Match | matchcase             |
 
  💼 Important Points
-
+-----------------------
 1. Python uses indentation, not braces
 2. Boolean expressions return True/False
 3. for loop works on iterable
@@ -249,3 +249,246 @@ else:
 5. continue skips iteration
 6. while can cause infinite loop
 7. matchcase available from Python 3.10
+
+## Logical Operators in Python
+--------------------------------
+Logical operators are used to combine or modify conditional expressions.
+They return Boolean results (True or False) and are commonly used in decision making (if, while).
+
+Python has three logical operators:
+ and
+ or
+ not
+
+# 1️⃣ and Operator
+--------------------
+The and operator returns True only when both conditions are True.
+
+If any condition is False, the whole expression becomes False.
+
+### Syntax
+python
+condition1 and condition2
+
+### Example
+python
+age = 25
+citizen = True
+
+if age >= 18 and citizen:
+    print("Eligible to vote")
+
+Output
+Eligible to vote
+
+### Truth Table
+
+| A     | B     | A and B |
+| ----- | ----- | ------- |
+| True  | True  | True    |
+| True  | False | False   |
+| False | True  | False   |
+| False | False | False   |
+
+# 2️⃣ or Operator
+The or operator returns True if at least one condition is True.
+
+It returns False only when both conditions are False.
+
+### Syntax
+python
+condition1 or condition2
+
+
+### Example
+python
+marks = 35
+if marks >= 40 or marks == 35:
+    print("Grace pass")
+
+Output
+Grace pass
+
+### Truth Table
+------------------
+| A     | B     | A or B |
+| ----- | ----- | ------ |
+| True  | True  | True   |
+| True  | False | True   |
+| False | True  | True   |
+| False | False | False  |
+
+# 3️⃣ not Operator
+-------------------
+### 📘 Theory
+
+The not operator reverses the Boolean value.
+ True → False
+ False → True
+
+### Syntax
+python
+not condition
+
+
+### Example
+python
+is_logged_in = False
+
+if not is_logged_in:
+    print("Please login")
+
+
+Output
+Please login
+
+# 🔗 Combining All Three Logical Operators
+----------------------------------------------
+You can combine and, or, and not in the same expression.
+
+### Example
+python
+age = 25
+salary = 50000
+is_student = False
+
+if age > 18 and salary > 30000 and not is_student:
+    print("Loan approved")
+
+Explanation:
+Condition checks:
+ Age greater than 18
+ Salary greater than 30000
+ Person is not a student
+
+All conditions must be satisfied.
+
+# 🔁 Combining and and or
+python
+age = 16
+guardian = True
+
+if age >= 18 or guardian:
+    print("Entry allowed")
+
+Here:
+ Either adult OR
+ Guardian present
+
+
+# 🧠 Using All Three Together
+python
+age = 22
+salary = 40000
+has_criminal_record = False
+
+if (age > 18 and salary > 30000) and not has_criminal_record:
+    print("Eligible for job")
+
+Explanation:
+1. Age must be greater than 18
+2. Salary condition satisfied
+3. Person must not have criminal record
+
+⚡ Order of Logical Operators (Operator Precedence)
+When multiple logical operators appear together, Python follows operator precedence rules.
+
+Priority Order
+
+| Priority | Operator |
+| -------- | -------- |
+| 1        | not    |
+| 2        | and    |
+| 3        | or     |
+
+So Python evaluates expressions in this order:
+
+not → and → or
+
+### Example
+python
+result = True or False and False
+print(result)
+
+Evaluation:
+False and False → False
+True or False → True
+
+Output
+True
+
+ Example with not
+
+python
+result = not False and True
+print(result)
+
+Evaluation:
+not False → True
+True and True → True
+
+Output
+True
+
+ 📌 Using Parentheses for Clarity
+
+Parentheses help control evaluation order.
+
+python
+result = (True or False) and False
+print(result)
+
+
+Evaluation:
+True or False → True
+True and False → False
+
+
+Output
+False
+
+ 🎯 Real-World Example
+
+Login system with multiple conditions.
+
+python
+username = "admin"
+password = "1234"
+is_blocked = False
+
+if (username == "admin" and password == "1234") and not is_blocked:
+    print("Login successful")
+else:
+    print("Access denied")
+
+ 📊 Quick Summary
+
+| Operator | Meaning                                |
+| -------- | -------------------------------------- |
+| and    | True if both conditions are true       |
+| or     | True if at least one condition is true |
+| not    | Reverses the result                    |
+
+Operator precedence
+
+
+not > and > or
+
+✅ Interview Tip
+
+Logical operators also work with non-boolean values.
+
+Example:
+
+python
+print(5 and 10)
+print(0 or 20)
+
+Output
+
+10
+20
+
+ and returns the last truthy value
+ or returns the first truthy value
+
