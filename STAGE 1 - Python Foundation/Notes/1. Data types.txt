@@ -103,6 +103,7 @@ print(5 == 3)      False
  Uses square brackets [ ]
 
 Example
+-------
 python
 numbers = [1, 2, 3, 4]
 print(numbers)
@@ -115,7 +116,7 @@ numbers[0] = 100
 print(numbers)
 
 4.2 Tuple - () 
-----------
+--------------
  Ordered
  Immutable (cannot change)
  Faster than list
@@ -238,10 +239,10 @@ print(tuple([1, 2, 3])) - (1,2,3)
 | -------------------- | -----------------  | ---------------- | ------------ | ----------------------- |
 | Syntax               | `[ ]`              | `( )`            | `{ }`        | `{key: value}`          |
 | Example              | `[1,2,3]`          | `(1,2,3)`        | `{1,2,3}`    | `{"a":1}`               |
-| Ordered              | ✅ Yes             | ✅ Yes          | ❌ No       | ✅ Yes (Py 3.7+)        |
-| Mutable              | ✅ Yes             | ❌ No           | ✅ Yes      | ✅ Yes                  |
-| Allows Duplicates    | ✅ Yes             | ✅ Yes          | ❌ No       | ❌ Keys No (Values Yes) |
-| Indexing             | ✅ Yes             | ✅ Yes          | ❌ No       | ❌ (Access via key)     |
-| Heterogeneous Data   | ✅ Yes             | ✅ Yes          | ✅ Yes      | ✅ Yes                  |
+| Ordered              | ✅ Yes             | ✅ Yes           | ❌ No       | ✅ Yes (Py 3.7+)          |
+| Mutable              | ✅ Yes             | ❌ No            | ✅ Yes      | ✅ Yes                    |
+| Allows Duplicates    | ✅ Yes             | ✅ Yes           | ❌ No       | ❌ Keys No (Values Yes)   |
+| Indexing             | ✅ Yes             | ✅ Yes           | ❌ No       | ❌ (Access via key)       |
+| Heterogeneous Data   | ✅ Yes             | ✅ Yes           | ✅ Yes      | ✅ Yes                    |
 | Performance (Search) | Slower             | Faster than list | Very Fast    | Very Fast               |
 | Use Case             | Ordered collection | Fixed data       | Unique items | Key-value mapping       |

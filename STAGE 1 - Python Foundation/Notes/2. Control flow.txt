@@ -1,5 +1,5 @@
-
- 🧠 What is Control Flow?
+🧠 What is Control Flow?
+-------------------------
 Control Flow determines the order in which statements are executed in a program.
 By default, Python executes code top to bottom.
 
@@ -21,6 +21,7 @@ That’s where control flow comes in.
 3️⃣ Loop Control Statements
 4️⃣ Exception Handling
 5️⃣ MatchCase (Python 3.10+)
+6 Logical operator - not, and, or
 
 1️⃣ Conditional Statements (Decision Making)
 -------------------------------------------
@@ -46,7 +47,7 @@ if age >= 18:
 else:
     print("Minor")
 
-🔹 ifelifelse
+🔹 ifeeliflse
 -------------
 python
 marks = 75
@@ -97,6 +98,23 @@ names = ["A", "B", "C"]
 for name in names:
     print(name)
 
+| Data Structure | Ordered   | Mutable | Allows Duplicates |
+| -------------- | --------  | ------- | ----------------- |
+| List           | ✅ Yes   | ✅ Yes  | ✅ Yes            |
+| Tuple          | ✅ Yes   | ❌ No   | ✅ Yes            |
+| Set            | ❌ No    | ✅ Yes  | ❌ No             |
+
+	
+iterate over dictionary	
+-------------------------
+| Method                           | What It Iterates |
+| -------------------------------- | ---------------- |
+| `for key in dict`                | Keys             |
+| `for key in dict.keys()`         | Keys             |
+| `for value in dict.values()`     | Values           |
+| `for key, value in dict.items()` | Keys and Values  |
+	
+
 🔁 while Loop
 ----------------
 Used when repetition depends on a condition.
@@ -137,45 +155,6 @@ for i in range(5):
     pass
 
 Used as placeholder.
-
-4️⃣ Exception Handling (Error Control Flow)
-----------------------------------------
-Prevents program crash.
-
-python
-try:
-    x = int(input("Enter number: "))
-    print(10 / x)
-except ZeroDivisionError:
-    print("Cannot divide by zero")
-except ValueError:
-    print("Invalid input")
-else:
-    print("No errors")
-finally:
-    print("Done")
-
- Theory:
-
- try → risky code
- except → handle error
- else → runs if no error
- finally → always runs
-
-5️⃣ matchcase (Python 3.10+)
------------------------------
-Modern switchcase alternative.
-
-python
-day = 2
-
-match day:
-    case 1:
-        print("Monday")
-    case 2:
-        print("Tuesday")
-    case _:
-        print("Invalid")
 
 🔥 Advanced Concepts
 ---------------------
@@ -229,6 +208,45 @@ while attempts < 3:
 else:
     print("Account locked")
 
+4️⃣ Exception Handling (Error Control Flow)
+----------------------------------------
+Prevents program crash.
+
+python
+try:
+    x = int(input("Enter number: "))
+    print(10 / x)
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+except ValueError:
+    print("Invalid input")
+else:
+    print("No errors")
+finally:
+    print("Done")
+
+ Theory:
+ try → risky code
+ except → handle error
+ else → runs if no error
+ finally → always runs
+
+5️⃣ matchcase (Python 3.10+)
+-----------------------------
+Modern switchcase alternative.
+
+python
+day = 2
+
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case _:
+        print("Invalid")
+
+
 
 📊 Summary Table
 -------------------
@@ -240,7 +258,7 @@ else:
 | Exception     | try, except, finally  |
 | Pattern Match | matchcase             |
 
- 💼 Important Points
+💼 Important Points
 -----------------------
 1. Python uses indentation, not braces
 2. Boolean expressions return True/False
@@ -263,7 +281,6 @@ Python has three logical operators:
 # 1️⃣ and Operator
 --------------------
 The and operator returns True only when both conditions are True.
-
 If any condition is False, the whole expression becomes False.
 
 ### Syntax
@@ -291,6 +308,7 @@ Eligible to vote
 | False | False | False   |
 
 # 2️⃣ or Operator
+------------------
 The or operator returns True if at least one condition is True.
 
 It returns False only when both conditions are False.
@@ -298,7 +316,6 @@ It returns False only when both conditions are False.
 ### Syntax
 python
 condition1 or condition2
-
 
 ### Example
 python
@@ -320,8 +337,6 @@ Grace pass
 
 # 3️⃣ not Operator
 -------------------
-### 📘 Theory
-
 The not operator reverses the Boolean value.
  True → False
  False → True
@@ -330,14 +345,12 @@ The not operator reverses the Boolean value.
 python
 not condition
 
-
 ### Example
 python
 is_logged_in = False
 
 if not is_logged_in:
     print("Please login")
-
 
 Output
 Please login
@@ -364,6 +377,7 @@ Condition checks:
 All conditions must be satisfied.
 
 # 🔁 Combining and and or
+-------------------------
 python
 age = 16
 guardian = True
@@ -376,7 +390,8 @@ Here:
  Guardian present
 
 
-# 🧠 Using All Three Together
+# 🧠 Using All Three together
+-------------------------------
 python
 age = 22
 salary = 40000
@@ -391,10 +406,11 @@ Explanation:
 3. Person must not have criminal record
 
 ⚡ Order of Logical Operators (Operator Precedence)
+----------------------------------------------------
 When multiple logical operators appear together, Python follows operator precedence rules.
 
 Priority Order
-
+-----------------
 | Priority | Operator |
 | -------- | -------- |
 | 1        | not    |
@@ -431,24 +447,22 @@ Output
 True
 
  📌 Using Parentheses for Clarity
-
+----------------------------------
 Parentheses help control evaluation order.
 
 python
 result = (True or False) and False
 print(result)
 
-
 Evaluation:
 True or False → True
 True and False → False
-
 
 Output
 False
 
  🎯 Real-World Example
-
+-----------------------------
 Login system with multiple conditions.
 
 python
@@ -462,7 +476,7 @@ else:
     print("Access denied")
 
  📊 Quick Summary
-
+----------------------
 | Operator | Meaning                                |
 | -------- | -------------------------------------- |
 | and    | True if both conditions are true       |
@@ -471,11 +485,10 @@ else:
 
 Operator precedence
 
-
 not > and > or
 
 ✅ Interview Tip
-
+-----------------
 Logical operators also work with non-boolean values.
 
 Example:
