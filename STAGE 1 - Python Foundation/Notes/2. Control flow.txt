@@ -148,8 +148,8 @@ for i in range(5):
         continue
     print(i)
 
- 🔹 pass (Does nothing)
-
+🔹 pass (Does nothing)
+------------------------
 python
 for i in range(5):
     pass
@@ -268,15 +268,15 @@ match day:
 6. while can cause infinite loop
 7. matchcase available from Python 3.10
 
-## Logical Operators in Python
+## Logical Operators in Python 
 --------------------------------
 Logical operators are used to combine or modify conditional expressions.
 They return Boolean results (True or False) and are commonly used in decision making (if, while).
 
 Python has three logical operators:
- and
+ not 
+ and 
  or
- not
 
 # 1️⃣ and Operator
 --------------------
@@ -298,14 +298,6 @@ if age >= 18 and citizen:
 Output
 Eligible to vote
 
-### Truth Table
-
-| A     | B     | A and B |
-| ----- | ----- | ------- |
-| True  | True  | True    |
-| True  | False | False   |
-| False | True  | False   |
-| False | False | False   |
 
 # 2️⃣ or Operator
 ------------------
@@ -325,15 +317,6 @@ if marks >= 40 or marks == 35:
 
 Output
 Grace pass
-
-### Truth Table
-------------------
-| A     | B     | A or B |
-| ----- | ----- | ------ |
-| True  | True  | True   |
-| True  | False | True   |
-| False | True  | True   |
-| False | False | False  |
 
 # 3️⃣ not Operator
 -------------------
@@ -419,7 +402,7 @@ Priority Order
 
 So Python evaluates expressions in this order:
 
-not → and → or
+parantisis -> not → and → or
 
 ### Example
 python
