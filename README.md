@@ -57,10 +57,13 @@ This repository documents my journey to becoming an **AI Platform Engineer** by 
 - Exception handling
 - Virtual environments
 - Package management (pip/poetry)
+- Advanced Python
+- FastAPI
 
 ## Python for AI
 - NumPy basics
 - Pandas (data cleaning & transformation)
+- PyTorch
 - File handling (CSV, JSON)
 - Logging
 - Async programming
