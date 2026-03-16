@@ -481,7 +481,7 @@ print(5 and 10)
 print(0 or 20)
 
 Output
-
++
 10
 20
 
