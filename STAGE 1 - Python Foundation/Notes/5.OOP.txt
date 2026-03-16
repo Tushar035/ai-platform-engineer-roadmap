@@ -1,0 +1,555 @@
+Object-Oriented Programming (OOP) in Python is a programming paradigm based on objects and classes. It helps in writing modular, reusable, scalable, and maintainable code.
+
+Since you are a .NET developer, you will find Python OOP concepts very similar to C# classes and objects, but Python is more flexible and dynamic.
+
+
+---
+
+1. Class and Object
+
+Class
+
+A class is a blueprint for creating objects.
+
+Example:
+A class Car defines properties like brand, color, speed and behaviors like drive, brake.
+
+Object
+
+An object is an instance of a class.
+
+
+---
+
+Example
+
+class Car:
+    brand = "Toyota"
+    color = "Red"
+
+car1 = Car()
+print(car1.brand)
+print(car1.color)
+
+Output
+
+Toyota
+Red
+
+Here:
+
+Car → class
+
+car1 → object
+
+
+
+---
+
+2. Constructor (__init__)
+
+A constructor is used to initialize object properties.
+
+In Python the constructor is:
+
+__init__()
+
+It runs automatically when an object is created.
+
+
+---
+
+Example
+
+class Car:
+
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+
+car1 = Car("BMW", "Black")
+
+print(car1.brand)
+print(car1.color)
+
+Output
+
+BMW
+Black
+
+Explanation:
+
+Keyword	Meaning
+
+__init__	constructor
+self	reference to current object
+self.brand	object variable
+
+
+
+---
+
+3. Instance Variables vs Class Variables
+
+Class Variable
+
+Shared by all objects.
+
+Instance Variable
+
+Unique for each object.
+
+
+---
+
+Example
+
+class Employee:
+
+    company = "Microsoft"   # class variable
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary  # instance variable
+
+emp1 = Employee("Tushar", 50000)
+emp2 = Employee("Rahul", 60000)
+
+print(emp1.company)
+print(emp2.company)
+
+Output
+
+Microsoft
+Microsoft
+
+
+---
+
+4. Methods in Python Classes
+
+A method is a function inside a class.
+
+Types:
+
+1. Instance Method
+
+
+2. Class Method
+
+
+3. Static Method
+
+
+
+
+---
+
+4.1 Instance Method
+
+Works with object data.
+
+class Student:
+
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print("Hello", self.name)
+
+s1 = Student("Tushar")
+s1.greet()
+
+Output
+
+Hello Tushar
+
+
+---
+
+4.2 Class Method
+
+Works with class variables.
+
+Decorator:
+
+@classmethod
+
+Example
+
+class Employee:
+
+    company = "Google"
+
+    @classmethod
+    def change_company(cls, new_name):
+        cls.company = new_name
+
+Employee.change_company("Microsoft")
+
+print(Employee.company)
+
+Output
+
+Microsoft
+
+
+---
+
+4.3 Static Method
+
+Does not use class or instance.
+
+Decorator:
+
+@staticmethod
+
+Example
+
+class MathUtils:
+
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+print(MathUtils.add(5, 3))
+
+Output
+
+8
+
+
+---
+
+5. Encapsulation
+
+Encapsulation means restricting direct access to variables and protecting data.
+
+Python uses:
+
+Type	Syntax
+
+Public	variable
+Protected	_variable
+Private	__variable
+
+
+
+---
+
+Example
+
+class BankAccount:
+
+    def __init__(self, balance):
+        self.__balance = balance   # private variable
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+
+account = BankAccount(1000)
+
+account.deposit(500)
+
+print(account.get_balance())
+
+Output
+
+1500
+
+Direct access not allowed:
+
+account.__balance ❌
+
+
+---
+
+6. Inheritance
+
+Inheritance allows one class to reuse another class's properties and methods.
+
+Parent class
+     ↓
+Child class
+
+
+---
+
+Example
+
+class Animal:
+
+    def speak(self):
+        print("Animal makes sound")
+
+
+class Dog(Animal):
+
+    def bark(self):
+        print("Dog barks")
+
+
+d = Dog()
+
+d.speak()
+d.bark()
+
+Output
+
+Animal makes sound
+Dog barks
+
+
+---
+
+Types of Inheritance
+
+1. Single inheritance
+
+
+2. Multiple inheritance
+
+
+3. Multilevel inheritance
+
+
+4. Hierarchical inheritance
+
+
+5. Hybrid inheritance
+
+
+
+
+---
+
+7. Polymorphism
+
+Polymorphism means same method name but different behavior.
+
+
+---
+
+Example
+
+class Dog:
+
+    def sound(self):
+        print("Dog barks")
+
+
+class Cat:
+
+    def sound(self):
+        print("Cat meows")
+
+
+animals = [Dog(), Cat()]
+
+for animal in animals:
+    animal.sound()
+
+Output
+
+Dog barks
+Cat meows
+
+
+---
+
+8. Method Overriding
+
+Child class overrides parent method.
+
+
+---
+
+Example
+
+class Animal:
+
+    def speak(self):
+        print("Animal sound")
+
+
+class Dog(Animal):
+
+    def speak(self):
+        print("Dog barks")
+
+
+d = Dog()
+d.speak()
+
+Output
+
+Dog barks
+
+
+---
+
+9. Abstraction
+
+Abstraction hides internal implementation and only shows essential features.
+
+In Python we use:
+
+abc module
+
+
+---
+
+Example
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+
+class Car(Vehicle):
+
+    def start(self):
+        print("Car started")
+
+
+c = Car()
+c.start()
+
+Output
+
+Car started
+
+
+---
+
+10. Magic Methods (Dunder Methods)
+
+Python special methods start with double underscore.
+
+Examples
+
+Method	Purpose
+
+__init__	constructor
+__str__	string representation
+__len__	length
+__add__	addition
+__eq__	equality
+
+
+
+---
+
+Example
+
+class Person:
+
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return f"Person name is {self.name}"
+
+
+p = Person("Tushar")
+
+print(p)
+
+Output
+
+Person name is Tushar
+
+
+---
+
+11. Real-world Example (Important)
+
+Example: E-commerce Order System
+
+class Product:
+
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+
+class Order:
+
+    def __init__(self):
+        self.products = []
+
+    def add_product(self, product):
+        self.products.append(product)
+
+    def total_price(self):
+        return sum(p.price for p in self.products)
+
+
+p1 = Product("Laptop", 80000)
+p2 = Product("Mouse", 500)
+
+order = Order()
+
+order.add_product(p1)
+order.add_product(p2)
+
+print(order.total_price())
+
+Output
+
+80500
+
+
+---
+
+Python OOP vs C# OOP (Quick Comparison)
+
+Feature	Python	C#
+
+Constructor	__init__()	Constructor()
+Access modifiers	_ , __	public/private/protected
+Interfaces	ABC	interface
+Static methods	@staticmethod	static
+Class methods	@classmethod	static-like
+
+
+
+---
+
+Key OOP Concepts Summary
+
+Concept	Meaning
+
+Class	Blueprint
+Object	Instance
+Encapsulation	Data hiding
+Inheritance	Code reuse
+Polymorphism	Same method different behavior
+Abstraction	Hide complexity
+
+
+
+---
+
+If you want, I can also show you advanced Python OOP topics that are used in real AI/ML and FastAPI projects, like:
+
+dataclasses
+
+pydantic models
+
+dependency injection
+
+repository pattern in Python
+
+OOP used in FastAPI
+
+SOLID principles in Python
+
