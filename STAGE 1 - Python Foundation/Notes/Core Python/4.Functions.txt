@@ -1,196 +1,167 @@
-
-# Python Functions – Complete Guide with Examples
-
-Functions are one of the **most important building blocks in Python**. They allow you to **organize code, reuse logic, and improve readability**.
+Python Functions 
+--------------------
+Functions are one of the most important building blocks in Python. They allow you to organize code, reuse logic, and improve readability.
 
 In simple terms:
-
-> A **function** is a reusable block of code that performs a specific task.
+> A function is a reusable block of code that performs a specific task.
 
 Instead of writing the same code multiple times, you can define a function and call it whenever needed.
 
----
-
-# 1. Why Functions Are Important
+1. Why Functions Are Important
 
 Without functions:
 
-```python
+python
 print("Hello Tushar")
 print("Hello Tushar")
 print("Hello Tushar")
-```
+
 
 With functions:
 
-```python
+python
 def greet():
     print("Hello Tushar")
 
 greet()
 greet()
 greet()
-```
+
 
 Advantages:
-
+-------
 * Code reusability
 * Cleaner code
 * Better structure
 * Easier debugging
 * Modular programming
 
----
-
-# 2. Syntax of Python Function
-
-```python
+2. Syntax of Python Function
+--------------------------
+python
 def function_name(parameters):
-    # code block
+    code block
     return value
-```
+
 
 Example:
-
-```python
+---------
+python
 def greet():
     print("Hello World")
 
 greet()
-```
 
 Output
 
-```
 Hello World
-```
 
----
 
-# 3. Function with Parameters
-
-Parameters allow you to **pass data into a function**.
+3. Function with Parameters
+------------------------------
+Parameters allow you to pass data into a function.
 
 Example:
 
-```python
+python
 def greet(name):
     print("Hello", name)
 
 greet("Tushar")
 greet("Rahul")
-```
+
 
 Output
 
-```
 Hello Tushar
 Hello Rahul
-```
 
----
 
-# 4. Function with Return Value
-
-Functions can return values using the **return** keyword.
+4. Function with Return Value
+-------------------------------
+Functions can return values using the return keyword.
 
 Example:
-
-```python
+python
 def add(a, b):
     return a + b
 
 result = add(10, 20)
 
 print(result)
-```
+
 
 Output
 
-```
 30
-```
 
 Important:
-
+--------------
 * `return` sends the result back to the caller
 * After `return`, function execution stops
 
----
-
-# 5. Multiple Parameters
-
-```python
+5. Multiple Parameters
+---------------------
+python
 def multiply(a, b):
     return a * b
 
 print(multiply(4, 5))
-```
+
 
 Output
 
-```
 20
-```
 
----
 
-# 6. Default Parameters
-
+6. Default Parameters
+------------------------
 Default values are used if no value is provided.
 
 Example:
-
-```python
+python
 def greet(name="Guest"):
     print("Hello", name)
 
 greet("Tushar")
 greet()
-```
+
 
 Output
 
-```
 Hello Tushar
 Hello Guest
-```
 
----
 
-# 7. Keyword Arguments
-
+7. Keyword Arguments
+------------------------
 Arguments can be passed using parameter names.
 
 Example:
 
-```python
+python
 def student(name, age):
     print(name, age)
 
 student(age=21, name="Tushar")
-```
+
 
 Output
 
-```
 Tushar 21
-```
 
 Advantages:
-
 * Order does not matter
 * Improves readability
 
----
 
-# 8. Arbitrary Arguments (*args)
-
-Used when you **don't know how many arguments will be passed**.
+8. Arbitrary Arguments (*args)
+---------------------------------
+Used when you don't know how many arguments will be passed.
 
 Example:
 
-```python
+python
 def add_numbers(*numbers):
     total = 0
     for num in numbers:
@@ -198,163 +169,116 @@ def add_numbers(*numbers):
     return total
 
 print(add_numbers(1,2,3,4))
-```
 
 Output
-
-```
 10
-```
 
-Here `numbers` becomes a **tuple**.
+Here `numbers` becomes a tuple.
 
----
-
-# 9. Keyword Arbitrary Arguments (**kwargs)
-
-Used to pass **multiple named arguments**.
+9. Keyword Arbitrary Arguments (kwargs)
+---------------------------------------
+Used to pass multiple named arguments.
 
 Example:
-
-```python
-def student_info(**data):
+python
+def student_info(data):
     for key, value in data.items():
         print(key, value)
 
 student_info(name="Tushar", age=21, city="Pune")
-```
 
 Output
-
-```
 name Tushar
 age 21
 city Pune
-```
 
-`kwargs` becomes a **dictionary**.
+`kwargs` becomes a dictionary.
 
----
-
-# 10. Lambda Functions (Anonymous Functions)
-
-A **lambda function** is a small one-line function.
+10. Lambda Functions (Anonymous Functions)
+---------------------------------------------
+A lambda function is a small one-line function.
 
 Syntax
 
-```python
+python
 lambda arguments : expression
-```
 
 Example:
-
-```python
+python
 square = lambda x: x*x
 
 print(square(5))
-```
 
 Output
-
-```
 25
-```
 
 Used in:
-
 * sorting
 * filtering
 * data processing
 
 Example with `map()`:
 
-```python
+python
 numbers = [1,2,3,4]
-
 result = list(map(lambda x: x*2, numbers))
-
 print(result)
-```
 
 Output
-
-```
 [2,4,6,8]
-```
 
----
-
-# 11. Recursive Functions
-
-A function calling itself is called **recursion**.
+11. Recursive Functions
+A function calling itself is called recursion.
 
 Example: Factorial
-
-```python
+python
 def factorial(n):
     if n == 1:
         return 1
     return n * factorial(n-1)
 
 print(factorial(5))
-```
-
 Output
-
-```
 120
-```
 
 Important:
-
 Recursion requires:
-
 1. Base condition
 2. Recursive call
 
----
-
-# 12. Nested Functions
-
+12. Nested Functions
+----------------------
 Functions inside another function.
 
 Example:
-
-```python
+python
 def outer():
     
     def inner():
         print("Inner Function")
     
     inner()
-
 outer()
-```
 
 Output
-
-```
 Inner Function
-```
 
----
 
-# 13. Function Scope
-
-Scope determines **where variables are accessible**.
+13. Function Scope
+--------------------
+Scope determines where variables are accessible.
 
 Types:
 
 | Scope     | Meaning                  |
-| --------- | ------------------------ |
+|  |  |
 | Local     | Inside function          |
 | Global    | Outside function         |
 | Enclosing | Nested function          |
 | Built-in  | Python default functions |
 
 Example:
-
-```python
+python
 x = 10
 
 def test():
@@ -363,22 +287,17 @@ def test():
 
 test()
 print(x)
-```
+
 
 Output
-
-```
 5
 10
-```
 
----
-
-# 14. Global Keyword
-
+14. Global Keyword
+---------------------
 Used to modify global variables inside a function.
 
-```python
+python
 x = 10
 
 def change():
@@ -386,25 +305,16 @@ def change():
     x = 20
 
 change()
-
 print(x)
-```
 
 Output
-
-```
 20
-```
 
----
-
-# 15. Python Built-in Functions
-
+15. Python Built-in Functions
+-------------------------------
 Python provides many built-in functions.
 
 Examples:
-
-```
 print()
 len()
 type()
@@ -412,66 +322,49 @@ range()
 sum()
 min()
 max()
-```
 
 Example
-
-```python
+python
 numbers = [10,20,30]
 
 print(sum(numbers))
 print(max(numbers))
-```
 
 Output
-
-```
 60
 30
-```
 
----
-
-# 16. Docstrings in Functions
-
+16.Docstrings in Functions
+-----------------------------
 Docstrings describe what the function does.
 
 Example:
-
-```python
+python
 def add(a,b):
     """
     This function returns sum of two numbers
     """
     return a+b
-```
 
 Access docstring:
-
-```python
+python
 print(add.__doc__)
-```
 
----
-
-# 17. Type Hinting (Modern Python)
-
+17. Type Hinting (Modern Python)
+--------------------------------
 Improves readability and IDE support.
 
 Example:
 
-```python
+python
 def add(a: int, b: int) -> int:
     return a + b
-```
 
----
-
-# 18. Real-world Example (Used in APIs)
-
+18. Real-world Example (Used in APIs)
+----------------------------------------
 Example similar to FastAPI backend logic:
 
-```python
+python
 def create_user(name, email):
     
     user = {
@@ -483,20 +376,13 @@ def create_user(name, email):
 
 
 user1 = create_user("Tushar", "tushar@email.com")
-
 print(user1)
-```
 
 Output
-
-```
 {'name':'Tushar','email':'tushar@email.com'}
-```
 
----
-
-# 19. Best Practices for Functions
-
+19. Best Practices for Functions
+-----------------------------------
 Good functions should be:
 
 ✔ Small
@@ -506,61 +392,48 @@ Good functions should be:
 
 Bad example:
 
-```python
+python
 def process_everything():
-```
 
 Good example:
-
-```
 calculate_tax()
 send_email()
 validate_user()
-```
 
----
-
-# 20. Common Interview Questions
-
-**1️⃣ Difference between argument and parameter**
+20. Common Interview Questions
+---------------------------------
+1️⃣ Difference between argument and parameter
 
 | Parameter           | Argument           |
-| ------------------- | ------------------ |
+| -                   |                    |
 | Defined in function | Passed during call |
 
 Example:
 
-```python
-def add(a,b):   # parameters
+python
+def add(a,b):   parameters
     return a+b
 
-add(2,3)        # arguments
-```
+add(2,3)        arguments
 
----
 
-**2️⃣ Difference between args and kwargs**
+2️⃣ Difference between args and kwargs
 
-| Feature   | *args      | **kwargs   |
-| --------- | ---------- | ---------- |
+| Feature   | *args      | kwargs   |
+|           | -          |        - |
 | Data type | tuple      | dictionary |
 | Arguments | positional | named      |
 
----
 
-# Conclusion
 
+Conclusion
 Python functions help you:
-
 * structure programs
 * reuse logic
 * simplify complex systems
 
 Functions are heavily used in:
-
 * Web APIs (FastAPI, Django)
 * AI pipelines
 * Data processing
 * Automation scripts
-
-

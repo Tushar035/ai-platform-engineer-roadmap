@@ -1,0 +1,45 @@
+# 🔹 Virtual Environment
+venv/
+.env/
+.env.*
+
+# 🔹 Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 🔹 Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# 🔹 Logs
+*.log
+
+# 🔹 VS Code
+.vscode/
+
+# 🔹 Jupyter Notebook
+.ipynb_checkpoints/
+
+# 🔹 OS files
+.DS_Store
+Thumbs.db
+
+# 🔹 Environment variables
+.env
+
+# 🔹 Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# 🔹 Pytest
+.pytest_cache/
+
+# 🔹 MyPy
+.mypy_cache/
+
+# 🔹 FastAPI / Uvicorn temp files
+*.sqlite3
