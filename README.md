@@ -211,8 +211,128 @@ LLM Provider
 - ASP.NET Core integration  
 
 ---
+# 🧠 STAGE 6 — Applied AI (Production-Focused)
 
-# 🧠 STAGE 6 — Deep Learning (Practical Level)
+This stage focuses on **real-world AI system optimization**, not deep model training.  
+Goal: Build **efficient, scalable, and production-ready LLM systems**.
+
+---
+
+## 🔧 LLM Fine-Tuning (API-Based)
+
+- Fine-tuning using OpenAI / Azure OpenAI APIs  
+- Instruction tuning (domain-specific behavior)  
+- Dataset preparation (prompt-completion format)  
+- Cost vs performance trade-offs  
+- When to fine-tune vs use prompt engineering  
+
+✅ **Outcome:**  
+- Domain-adapted LLM (without training from scratch)
+
+---
+
+## 📊 Embedding Optimization
+
+- Choosing the right embedding model  
+- Chunk size optimization  
+- Overlap strategies  
+- Embedding versioning  
+- Reducing vector noise  
+- Performance vs accuracy trade-offs  
+
+✅ **Outcome:**  
+- High-quality semantic search & retrieval
+
+---
+
+## ✍️ Prompt Engineering at Scale
+
+- System vs user prompts  
+- Prompt templates  
+- Dynamic prompt generation  
+- Few-shot prompting  
+- Chain-of-thought prompting (controlled usage)  
+- Prompt versioning  
+
+✅ **Outcome:**  
+- Consistent and reliable LLM outputs
+
+---
+
+## 📏 Evaluation Frameworks
+
+### RAG Evaluation
+- Context relevance  
+- Answer correctness  
+- Retrieval accuracy  
+
+### LLM Evaluation
+- Hallucination detection  
+- Response quality scoring  
+- Automated evaluation pipelines  
+
+### Tools (Optional)
+- Ragas  
+- DeepEval  
+- Custom evaluation pipelines  
+
+✅ **Outcome:**  
+- Measurable AI system performance
+
+---
+
+## 🔐 Guardrails & Safety
+
+- Prompt injection detection  
+- Input validation & sanitization  
+- Output filtering  
+- PII masking  
+- Role-based access control for AI  
+- Safety policies enforcement  
+
+✅ **Outcome:**  
+- Secure and reliable AI systems
+
+---
+
+## ⚡ Caching Strategies
+
+- Response caching (Redis)  
+- Embedding caching  
+- Semantic caching  
+- Cache invalidation strategies  
+- Cost optimization techniques  
+
+✅ **Outcome:**  
+- Reduced latency and API cost
+
+---
+
+## 🤖 Multi-Agent Systems (LangGraph)
+
+- Agent roles & responsibilities  
+- Tool calling & orchestration  
+- Stateful workflows  
+- DAG-based execution  
+- Human-in-the-loop flows  
+- Failure handling & retries  
+
+✅ **Outcome:**  
+- Advanced AI workflows with multiple agents
+
+---
+
+# 🎯 Deliverables
+
+- Production-ready prompt system  
+- Evaluated RAG pipeline  
+- Secure AI service with guardrails  
+- Cost-optimized AI architecture  
+- Multi-agent workflow using LangGraph  
+
+---
+
+# 🧠 STAGE 6 a — Deep Learning (Practical Level) optional 
 
 - PyTorch / TensorFlow  
 - Tensors  
