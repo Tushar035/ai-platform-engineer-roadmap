@@ -1,8 +1,8 @@
-Object-Oriented Programming (OOP) in Python is a programming paradigm based on objects and classes. It helps in writing modular, reusable, scalable, and maintainable code.
+🐍 Object-Oriented Programming (OOP) in Python is a programming paradigm based on objects and classes. It helps in writing modular, reusable, scalable, and maintainable code.
 
 Since you are a .NET developer, you will find Python OOP concepts very similar to C# classes and objects, but Python is more flexible and dynamic.
 
-1. Class and Object
+📌 1. Class and Object
 -------------------
 Class
 A class is a blueprint for creating objects.
@@ -13,8 +13,7 @@ A class Car defines properties like brand, color, speed and behaviors like drive
 Object
 An object is an instance of a class.
 
-Example
-
+Example:
 class Car:
     brand = "Toyota"
     color = "Red"
@@ -24,30 +23,23 @@ print(car1.brand)
 print(car1.color)
 
 Output
-
 Toyota
 Red
 
 Here:
-
 Car → class
-
 car1 → object
 
-2. Constructor (__init__)
+📌 2. Constructor (__init__)
 ---------------------------
 A constructor is used to initialize object properties.
 
 In Python the constructor is:
-
 __init__()
 
 It runs automatically when an object is created.
-
 Example
-
 class Car:
-
     def __init__(self, brand, color):
         self.brand = brand
         self.color = color
@@ -58,24 +50,22 @@ print(car1.brand)
 print(car1.color)
 
 Output
-
 BMW
 Black
 
 Explanation:
-
 Keyword	Meaning
 
 __init__	constructor
 self	reference to current object
 self.brand	object variable
 
-3. Instance Variables vs Class Variables
+📌 3. Instance Variables vs Class Variables
 ---------------------------------------
-Class Variable
-Shared by all objects.
-Instance Variable
-Unique for each object.
+Class Variable:
+ Shared by all objects.
+Instance Variable:
+ Unique for each object.
 
 Example
 class Employee:
@@ -95,7 +85,7 @@ Output
 Microsoft
 Microsoft
 
-4. Methods in Python Classes
+📌 4. Methods in Python Classes
 -------------------------------
 A method is a function inside a class.
 
@@ -158,14 +148,12 @@ print(MathUtils.add(5, 3))
 Output
 8
 
-5. Encapsulation
+📌 5. Encapsulation
 --------------------
 Encapsulation means restricting direct access to variables and protecting data.
 
 Python uses:
-
 Type	Syntax
-
 Public	variable
 Protected	_variable
 Private	__variable
@@ -192,7 +180,7 @@ Output
 Direct access not allowed:
 account.__balance ❌
 
-6. Inheritance
+📌 6. Inheritance
 ----------------
 Inheritance allows one class to reuse another class's properties and methods.
 
@@ -227,7 +215,7 @@ Types of Inheritance
 4. Hierarchical inheritance
 5. Hybrid inheritance
 
-7. Polymorphism
+📌 7. Polymorphism
 ----------------
 Polymorphism means same method name but different behavior.
 
@@ -252,7 +240,7 @@ Output
 Dog barks
 Cat meows
 
-8. Method Overriding
+📌 8. Method Overriding
 ----------------------
 Child class overrides parent method.
 
@@ -275,7 +263,7 @@ d.speak()
 Output
 Dog barks
 
-9. Abstraction
+📌 9. Abstraction
 ----------------
 Abstraction hides internal implementation and only shows essential features.
 
@@ -303,7 +291,7 @@ c.start()
 Output
 Car started
 
-10. Magic Methods (Dunder Methods)
+📌 10. Magic Methods (Dunder Methods)
 ------------------------------------
 Python special methods start with double underscore.
 
@@ -331,7 +319,7 @@ print(p)
 Output
 Person name is Tushar
 
-11. Real-world Example (Important)
+📌 11. Real-world Example (Important)
 ----------------------------------
 Example: E-commerce Order System
 
