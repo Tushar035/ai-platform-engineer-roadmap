@@ -1,0 +1,415 @@
+
+🧠 Generative AI with LLMs — Detailed Notes
+
+🚀 Introduction to LLMs
+
+Large Language Models (LLMs) are a very exciting technology
+
+Despite hype, many people underestimate their power for developers
+
+Applications that earlier took:
+
+❌ Months to build
+
+✅ Now can be built in days or weeks
+
+
+
+
+---
+
+💡 What This Course Covers
+
+This course provides a deep technical dive into:
+
+How LLMs work internally
+
+Model training
+
+Instruction tuning
+
+Fine-tuning
+
+Generative AI project lifecycle
+
+Planning and execution of AI projects
+
+
+
+---
+
+🌍 LLMs as General-Purpose Technology
+
+Similar to:
+
+Deep Learning
+
+Electricity
+
+
+Not limited to one use case
+
+Can be applied across many industries and domains
+
+
+Key Insight:
+
+> LLMs = Foundation technology → Massive long-term impact
+
+
+
+
+---
+
+📈 Industry Demand
+
+Technology is very new
+
+Few people truly understand how to use it
+
+Companies are:
+
+Actively hiring
+
+Looking for LLM-skilled developers
+
+
+
+👉 This course helps you:
+
+Build real applications
+
+Position yourself for AI jobs
+
+
+
+---
+
+📚 Target Audience (Prerequisites)
+
+You should know:
+
+Python programming
+
+Basic Data Science
+
+Basic Machine Learning concepts
+
+Optional:
+
+PyTorch OR TensorFlow
+
+
+
+
+---
+
+🔄 Generative AI Project Lifecycle
+
+Flow Diagram
+
+Problem Definition
+        ↓
+Model Selection
+        ↓
+Training / Fine-tuning
+        ↓
+Optimization
+        ↓
+Deployment
+        ↓
+Integration into Applications
+
+
+---
+
+🎯 Goal of Course
+
+Not shallow learning ❌
+
+Deep technical understanding ✅
+
+Build confidence to:
+
+Train models
+
+Tune models
+
+Deploy real applications
+
+
+
+
+---
+
+📅 Weekly Breakdown
+
+
+---
+
+🧪 Week 1 — Foundations of LLMs
+
+Topics:
+
+Transformer Architecture (core of LLMs)
+
+How LLMs are trained
+
+Compute resources required
+
+In-context learning
+
+Prompt engineering
+
+Generation parameters tuning
+
+
+
+---
+
+🔄 Week 1 Flow
+
+Transformer Architecture
+        ↓
+Model Training
+        ↓
+Inference (Prediction Time)
+        ↓
+Prompt Engineering
+        ↓
+Output Generation Tuning
+
+
+---
+
+🧪 Week 2 — Model Adaptation
+
+Topics:
+
+Using pre-trained models
+
+Instruction Fine-Tuning
+
+Adapting models to:
+
+Specific tasks
+
+Custom datasets
+
+
+
+
+---
+
+🔄 Week 2 Flow
+
+Pre-trained Model
+        ↓
+Custom Dataset
+        ↓
+Instruction Fine-Tuning
+        ↓
+Task-Specific Model
+
+
+---
+
+🧪 Week 3 — Alignment & Safety
+
+Topics:
+
+Aligning models with human values
+
+Improving:
+
+Helpfulness
+
+Safety
+
+
+Reducing:
+
+Toxicity
+
+Harmful outputs
+
+
+
+
+---
+
+🔄 Week 3 Flow
+
+Model Outputs
+        ↓
+Human Feedback
+        ↓
+Reward Model
+        ↓
+RLHF (Reinforcement Learning)
+        ↓
+Aligned Model Output
+
+
+---
+
+🧪 Hands-on Labs (Very Important)
+
+
+---
+
+🔬 Lab 1 — Prompt Engineering
+
+Tasks:
+
+Compare different prompts
+
+Work on dialogue summarization
+
+Experiment with:
+
+Inputs
+
+Inference parameters
+
+Sampling strategies
+
+
+
+
+---
+
+🔄 Lab 1 Flow
+
+Input Prompt Variations
+        ↓
+Model Inference
+        ↓
+Output Comparison
+        ↓
+Parameter Tuning
+
+
+---
+
+🔬 Lab 2 — Fine-Tuning Models
+
+Tasks:
+
+Fine-tune LLM from Hugging Face
+
+Explore:
+
+Full fine-tuning
+
+PEFT (Parameter Efficient Fine-Tuning)
+
+
+
+
+---
+
+🔄 Lab 2 Flow
+
+Pre-trained Model (Hugging Face)
+        ↓
+Fine-Tuning Approach
+   ↙            ↘
+Full FT        PEFT
+        ↓
+Optimized Model
+
+
+---
+
+🔬 Lab 3 — RLHF (Alignment)
+
+Tasks:
+
+Build reward model
+
+Classify outputs:
+
+Toxic ❌
+
+Non-toxic ✅
+
+
+
+
+---
+
+🔄 Lab 3 Flow
+
+Model Output
+        ↓
+Human Labeling
+        ↓
+Reward Model Training
+        ↓
+RLHF Optimization
+        ↓
+Safer Model
+
+
+---
+
+🔑 Key Concepts Introduced
+
+Transformer Architecture
+
+In-context learning
+
+Prompt engineering
+
+Generation parameters
+
+Instruction fine-tuning
+
+PEFT (efficient tuning)
+
+RLHF (Reinforcement Learning from Human Feedback)
+
+Reward models
+
+
+
+---
+
+🧠 Final Takeaways
+
+LLMs are powerful developer tools
+
+Can drastically reduce development time
+
+Huge demand for skilled engineers
+
+Requires:
+
+Strong fundamentals
+
+Hands-on practice
+
+
+This course gives:
+
+Theory + Practical labs
+
+
+
+
+---
+
+⚡ Simple Big Picture Flow
+
+Learn Concepts
+     ↓
+Understand LLM Internals
+     ↓
+Practice via Labs
+     ↓
+Build Real Applications
+     ↓
+Get AI Job Opportunities
+
+
