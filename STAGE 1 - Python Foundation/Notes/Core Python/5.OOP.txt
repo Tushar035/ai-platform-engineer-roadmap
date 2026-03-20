@@ -153,10 +153,11 @@ Output
 Encapsulation means restricting direct access to variables and protecting data.
 
 Python uses:
-Type	Syntax
-Public	variable
-Protected	_variable
-Private	__variable
+| Type      | Syntax       | Where Accessible                                |                                                                                                                                                                                                                                                   |
+| --------- | ------------ | ------------------------------------------------|
+| Public    | variable     | Anywhere (inside class, outside class, subclass)| 
+| Protected | _variable    | Inside class + subclass (by convention only)    |
+| Private   | __variable   | Only inside the class (name mangling applied)   |  
 
 Example
 class BankAccount:
@@ -169,7 +170,6 @@ class BankAccount:
     def get_balance(self):
         return self.__balance
 
-
 account = BankAccount(1000)
 account.deposit(500)
 print(account.get_balance())
@@ -180,6 +180,32 @@ Output
 Direct access not allowed:
 account.__balance ❌
 
+💡 Important Insight (Interview Level)
+
+Python does not have true private variables like C# or Java.
+It uses name mangling to avoid accidental access, not strict security.
+
+# Protected Example
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name          # public
+        self._salary = salary     # protected
+
+class Manager(Employee):
+    def display(self):
+        # ✅ accessing protected variable from parent class
+        print(f"Manager Salary: {self._salary}")
+
+# Create objects
+emp = Employee("Tushar", 50000)
+mgr = Manager("Rahul", 80000)
+
+# Access inside subclass
+mgr.display()   # ✅ allowed
+
+# Access outside class
+print(emp._salary)  # ⚠️ allowed but NOT recommended
+
 📌 6. Inheritance
 ----------------
 Inheritance allows one class to reuse another class's properties and methods.
@@ -189,16 +215,12 @@ Parent class
 Child class
 Example
 class Animal:
-
     def speak(self):
         print("Animal makes sound")
 
-
 class Dog(Animal):
-
     def bark(self):
         print("Dog barks")
-
 
 d = Dog()
 d.speak()
@@ -209,11 +231,246 @@ Animal makes sound
 Dog barks
 
 Types of Inheritance
-1. Single inheritance
-2. Multiple inheritance
-3. Multilevel inheritance
-4. Hierarchical inheritance
-5. Hybrid inheritance
+## 1️⃣ Single Inheritance
+👉 One parent → One child
+
+python
+class Parent:
+    def show(self):
+        print("This is Parent")
+
+class Child(Parent):
+    def display(self):
+        print("This is Child")
+
+c = Child()
+c.show()     # inherited
+c.display()
+
+## 2️⃣ Multiple Inheritance
+👉 One child → Multiple parents
+
+python
+class Father:
+    def skill1(self):
+        print("Driving")
+
+class Mother:
+    def skill2(self):
+        print("Cooking")
+
+class Child(Father, Mother):
+    def skills(self):
+        print("Child skills")
+
+c = Child()
+c.skill1()   # from Father
+c.skill2()   # from Mother
+
+## 3️⃣ Multilevel Inheritance
+👉 Grandparent → Parent → Child
+
+python
+class Grandparent:
+    def home(self):
+        print("Grandparent's Home")
+
+class Parent(Grandparent):
+    def car(self):
+        print("Parent's Car")
+
+class Child(Parent):
+    def bike(self):
+        print("Child's Bike")
+
+c = Child()
+c.home()  # from Grandparent
+c.car()   # from Parent
+c.bike()
+
+## 4️⃣ Hierarchical Inheritance
+👉 One parent → Multiple children
+
+python
+class Parent:
+    def property(self):
+        print("Parent Property")
+
+class Child1(Parent):
+    def skill1(self):
+        print("Child1 Skill")
+
+class Child2(Parent):
+    def skill2(self):
+        print("Child2 Skill")
+
+c1 = Child1()
+c2 = Child2()
+
+c1.property()
+c2.property()
+
+## 5️⃣ Hybrid Inheritance
+
+👉 Combination of multiple types (e.g., multiple + multilevel)
+
+python
+class A:
+    def methodA(self):
+        print("Class A")
+
+class B(A):
+    def methodB(self):
+        print("Class B")
+
+class C(A):
+    def methodC(self):
+        print("Class C")
+
+class D(B, C):
+    def methodD(self):
+        print("Class D")
+
+d = D()
+d.methodA()  # from A
+d.methodB()  # from B
+d.methodC()  # from C
+d.methodD()
+
+# 🔥 Quick Summary
+
+| Type         | Structure    |
+| ------------ | ------------ |
+| Single       | A → B        |
+| Multiple     | A + B → C    |
+| Multilevel   | A → B → C    |
+| Hierarchical | A → B, A → C |
+| Hybrid       | Combination  |
+
+## ⚡ Pro Tip (Very Important)
+* Python uses **MRO (Method Resolution Order)** to resolve conflicts in multiple/hybrid inheritance.
+* You can check it using:
+
+python
+print(ClassName.mro())
+
+# 💎 Diamond Problem (Visual)
+### Structure:
+
+        A
+       / \
+      B   C
+       \ /
+        D
+
+👉 Class **D** inherits from both **B** and **C**,
+and both B & C inherit from **A**
+
+# ⚠️ The Problem
+👉 If method exists in multiple places, **which one should Python call?**
+
+## 🧪 Example
+python
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def show(self):
+        print("B")
+
+class C(A):
+    def show(self):
+        print("C")
+
+class D(B, C):
+    pass
+
+d = D()
+d.show()
+
+## 🤔 What will be output?
+👉 Output:
+B
+
+# 🧠 Why "B"? → MRO comes into play
+Python follows a specific order called:
+
+# 🔥 MRO (Method Resolution Order)
+👉 It decides **which class to search first**
+
+## 📌 Check MRO
+python
+print(D.mro())
+
+👉 Output:
+[D, B, C, A, object]
+
+
+## 🧭 How Python searches:
+
+1. D
+2. B ✅ (found `show()`)
+3. C
+4. A
+
+👉 So it stops at **B**
+
+# ⚙️ Rule Behind MRO (C3 Linearization)
+👉 Python uses **C3 Linearization algorithm**
+
+### Rules:
+* Left → Right priority
+* Child comes before parents
+* No duplicate paths
+* Maintains hierarchy order
+
+# 🔥 Important Twist (Using super())
+python
+class A:
+    def show(self):
+        print("A")
+
+class B(A):
+    def show(self):
+        print("B")
+        super().show()
+
+class C(A):
+    def show(self):
+        print("C")
+        super().show()
+
+class D(B, C):
+    def show(self):
+        print("D")
+        super().show()
+
+d = D()
+d.show()
+
+## 🎯 Output:
+D
+B
+C
+A
+
+## 🧠 Why this order?
+👉 Because MRO is:
+
+[D, B, C, A, object]
+👉 `super()` follows **this exact order**, not just parent class!
+
+# 🚀 Real Insight (Very Important)
+> `super()` does NOT mean "call parent"
+> It means → **call next class in MRO**
+
+# ⚡ Interview Summary
+* Diamond problem = ambiguity in multiple inheritance
+* Python solves it using **MRO (C3 Linearization)**
+* `super()` follows MRO, not direct parent
+* Order = **Left → Right → Depth-aware**
+
 
 📌 7. Polymorphism
 ----------------
@@ -221,12 +478,10 @@ Polymorphism means same method name but different behavior.
 
 Example
 class Dog:
-
     def sound(self):
         print("Dog barks")
 
 class Cat:
-
     def sound(self):
         print("Cat meows")
 
@@ -246,16 +501,13 @@ Child class overrides parent method.
 
 Example
 class Animal:
-
     def speak(self):
         print("Animal sound")
 
 
 class Dog(Animal):
-
     def speak(self):
         print("Dog barks")
-
 
 d = Dog()
 d.speak()
@@ -274,16 +526,13 @@ Example
 from abc import ABC, abstractmethod
 
 class Vehicle(ABC):
-
     @abstractmethod
     def start(self):
         pass
 
 class Car(Vehicle):
-
     def start(self):
         print("Car started")
-
 
 c = Car()
 c.start()
@@ -305,13 +554,11 @@ __eq__	equality
 
 Example
 class Person:
-
     def __init__(self, name):
         self.name = name
 
     def __str__(self):
         return f"Person name is {self.name}"
-
 
 p = Person("Tushar")
 print(p)
@@ -324,14 +571,11 @@ Person name is Tushar
 Example: E-commerce Order System
 
 class Product:
-
     def __init__(self, name, price):
         self.name = name
         self.price = price
 
-
 class Order:
-
     def __init__(self):
         self.products = []
 
@@ -351,33 +595,31 @@ order.add_product(p1)
 order.add_product(p2)
 
 print(order.total_price())
-
 Output
 80500
 
 Python OOP vs C# OOP (Quick Comparison)
+Feature	           Python	        C#
+Constructor	      __init__()	  Constructor()
+Access modifiers	_ , __	      public/private/protected
+Interfaces	         ABC	      interface
+Static methods	 @staticmethod    static
+Class methods	 @classmethod     static-like
 
-Feature	Python	C#
-Constructor	__init__()	Constructor()
-Access modifiers	_ , __	public/private/protected
-Interfaces	ABC	interface
-Static methods	@staticmethod	static
-Class methods	@classmethod	static-like
+# Key OOP Concepts Summary
+ Concept       |	Meaning
+ --------------|-------------
+ Class	       | Blueprint
+ Object        | Instance
+ Encapsulation | Data hiding
+ Inheritance   | Code reuse
+ Polymorphism  | Same method different behavior
+ Abstraction   | Hide complexity
 
-Key OOP Concepts Summary
-Concept	Meaning
-Class	Blueprint
-Object	Instance
-Encapsulation	Data hiding
-Inheritance	Code reuse
-Polymorphism	Same method different behavior
-Abstraction	Hide complexity
-
-advanced Python OOP topics that are used in real AI/ML and FastAPI projects, like:
-
-dataclasses
-pydantic models
-dependency injection
-repository pattern in Python
-OOP used in FastAPI
-SOLID principles in Python
+# advanced Python OOP topics that are used in real AI/ML and FastAPI projects, like:
+* dataclasses
+* pydantic models
+* dependency injection
+* repository pattern in Python
+* OOP used in FastAPI
+* SOLID principles in Python
