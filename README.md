@@ -1,3 +1,15 @@
+![AI](https://img.shields.io/badge/AI-Platform-blue)
+![Azure](https://img.shields.io/badge/Azure-Cloud-blue)
+![.NET](https://img.shields.io/badge/.NET-Backend-purple)
+![Python](https://img.shields.io/badge/Python-AI-yellow)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![LLM](https://img.shields.io/badge/LLM-Applications-orange)
+![Vector DB](https://img.shields.io/badge/VectorDB-pgvector-red)
+![Docker](https://img.shields.io/badge/Docker-Containerization-blue)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue)
+![CI/CD](https://img.shields.io/badge/CI/CD-Automation-orange)
+![MLOps](https://img.shields.io/badge/MLOps-Production-green)
+![License](https://img.shields.io/badge/license-MIT-purple)
 
 # 🚀 AI Platform Engineer Roadmap  
 ### (.NET + Python + AI + MLOps)
