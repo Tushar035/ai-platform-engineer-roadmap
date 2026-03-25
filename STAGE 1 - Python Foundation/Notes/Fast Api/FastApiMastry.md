@@ -1,4 +1,4 @@
-# 🚀 FastAPI Mastry (Optimized: Beginner → Advanced → Architect)
+in# 🚀 FastAPI Mastry (Optimized: Beginner → Advanced → Architect)
 
 ## 📌 Overview
 
@@ -91,6 +91,7 @@ It is structured to:
 
 34. Middleware Explained
 35. Advanced Middleware Patterns
+35A. Logging and exception handling 
 36. Lifespan Events (startup/shutdown)
 37. Using Request Object Directly
 
