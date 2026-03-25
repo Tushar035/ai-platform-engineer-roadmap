@@ -1,0 +1,252 @@
+🐍 Python Type Hints 
+
+🧠 1. What are Type Hints?
+-------------------------------
+👉 Type hints are a way to tell Python:
+> “What kind of data this variable should have”
+
+📌 Example:
+python
+def greet(name: str):
+    print(name)
+
+👉 Here:
+* `name: str` → name must be **text (string)**
+💡 Important:
+* Type hints **do NOT change how Python runs**
+* They are mainly for:
+
+  * Better understanding
+  * Editor help
+  * Error detection 
+
+🎯 2. Why Type Hints are Useful
+--------------------------------
+❌ Without Type Hints
+python
+def get_full_name(first_name, last_name):
+    return first_name.title() + " " + last_name.title()
+
+👉 Problem:
+* Editor doesn’t know type
+* No suggestions
+* Easy to make mistakes
+
+✅ With Type Hints
+python
+def get_full_name(first_name: str, last_name: str):
+    return first_name.title() + " " + last_name.title()
+
+👉 Benefits:
+* Auto-complete works
+* Editor shows methods like `.title()`
+* Fewer bugs
+
+ ⚠️ 3. Type Hints vs Default Values
+---------------------------------
+❌ Wrong thinking:
+
+python
+name = "Tushar"    default value
+
+✅ Type hint:
+python
+name: str
+
+👉 Difference:
+* `=` → gives value
+* `:` → gives type
+
+ 🔢 4. Basic Data Types
+--------------------------
+| Type    | Meaning     | Example |
+|       - | --          | -       |
+| `str`   | Text        | "Hello" |
+| `int`   | Integer     | 10      |
+| `float` | Decimal     | 10.5    |
+| `bool`  | True/False  | True    |
+| `bytes` | Binary data | b"abc"  |
+
+
+Example:
+python
+def get_data(a: str, b: int, c: float, d: bool):
+    return a, b, c, d
+
+
+❌ 5. Common Error Example
+------------------------
+python
+def get_name_with_age(name: str, age: int):
+    return name + " is " + age
+
+👉 ERROR:
+* Cannot add string + integer
+
+✅ Fix:
+python
+def get_name_with_age(name: str, age: int):
+    return name + " is " + str(age)
+
+👉 Type hints help detect this early
+
+📦 6. Using `typing` Module
+--------------------------------
+python
+from typing import Any
+
+def print_data(data: Any):
+    print(data)
+
+👉 `Any` means:
+----------------
+* Can accept **any type**
+
+
+🧺 7. Generic Types (Important Concept)
+----------------------------------------
+👉 These are containers with types inside them
+
+🧾 List
+-----------
+python
+def process_items(items: list[str]):
+    for item in items:
+        print(item)
+
+👉 Meaning:
+* items is a list
+* each item is a string
+
+
+📦 Tuple
+-----------
+python
+def example(data: tuple[int, int, str]):
+    pass
+
+👉 Meaning:
+* fixed 3 values:
+  * int, int, string
+
+🧩 Set
+-----------
+python
+def example(data: set[bytes]):
+    pass
+
+👉 Meaning:
+* collection of bytes
+
+📊 Dictionary
+-----------------------
+python
+def process_prices(prices: dict[str, float]):
+    pass
+
+👉 Meaning:
+* key = string (item name)
+* value = float (price)
+
+🔀 8. Union (Multiple Types)
+-----------------------------
+python
+def process_item(item: int | str):
+    print(item)
+
+👉 item can be:
+* number OR string
+
+❓ 9. Optional (None Value)
+----------------------------
+python
+def say_hi(name: str | None = None):
+    if name:
+        print(name)
+    else:
+        print("Hello")
+
+👉 name can be:
+* string OR nothing
+
+🧱 10. Classes as Types
+---------------------------
+python
+class Person:
+    def __init__(self, name: str):
+        self.name = name
+
+def get_person_name(p: Person):
+    return p.name
+
+👉 p must be a **Person object**
+
+ 🤖 11. Pydantic Models (Very Important for FastAPI)
+--------------------------------------------------------
+👉 Pydantic checks and converts data automatically
+python
+from pydantic import BaseModel
+
+class User(BaseModel):
+    id: int
+    name: str
+
+Example:
+python
+data = {
+    "id": "123",
+    "name": "Tushar"
+}
+user = User(**data)
+
+👉 Output:
+* id becomes integer automatically
+* validation happens
+
+ 🧩 12. Annotated (Advanced)
+-----------------------------
+python
+from typing import Annotated
+
+def greet(name: Annotated[str, "user name"]) -> str:
+    return "Hello " + name
+
+👉 Used to add:
+* extra info (metadata)
+* mostly used in FastAPI
+
+ 🚀 13. Type Hints in FastAPI
+------------------------------
+FastAPI uses type hints to:
+ ✅ 1. Validate data
+ 🔄 2. Convert data
+ 📄 3. Generate API docs
+ ❌ 4. Show errors automatically
+
+👉 That’s why FastAPI is powerful 
+
+
+🧠 14. Key Concepts to Remember
+---------------------------------
+🔑 Rule 1
+Type hints = **help for developers, not Python execution**
+
+🔑 Rule 2
+Use `:` for types, not `=`
+
+🔑 Rule 3
+Use generics for collections:
+* list[str]
+* dict[str, int]
+
+🔑 Rule 4
+Use `|` for multiple types
+
+🎯 Final Summary
+👉 Type hints help you:
+* Write clean code
+* Avoid bugs
+* Get editor support
+* Build better APIs
+
+

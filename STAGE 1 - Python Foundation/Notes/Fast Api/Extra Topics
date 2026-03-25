@@ -1,0 +1,5 @@
+1. Event Loop deep dive
+2. Async vs threading vs multiprocessing
+3. Async DB (SQLAlchemy async)
+4. Background tasks (Celery, Redis)
+5. Scaling FastAPI (Gunicorn + Uvicorn workers)
